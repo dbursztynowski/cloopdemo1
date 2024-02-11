@@ -40,7 +40,7 @@ As the project has been primarily focusing on the mechanisms, many aspects relat
 
 # CHAPTER II. GETTING STARTED
 
-You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
+You’ll need a working Kubernetes cluster to run against. You can use minikube or [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
 **Note:** Your controller will automatically use the current context in your kubeconfig file (i.e., whatever cluster `kubectl cluster-info` shows).
 
 ## Prerequisites
@@ -54,7 +54,7 @@ sudo mv /root/.kube $HOME/.kube # this will write over any previous configuratio
 sudo chown -R $USER $HOME/.kube
 sudo chgrp -R $USER $HOME/.kube
 ```
-4. Access to a Kubernetes v1.11.3+ cluster. For kubernetes cluster you can use [KIND](https://sigs.k8s.io/kind) described above
+4. Access to a Kubernetes v1.11.3+ cluster. As mentioned above, for testing you can use, e.g., minikube or [KIND](https://sigs.k8s.io/kind).
 
 ## Install kubebuilder
 [Run the installation procedure.](https://book.kubebuilder.io/quick-start#installation) Run this as sudo user. Check instalation by
