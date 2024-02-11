@@ -22,7 +22,7 @@
 
 ***Note 1: this page contains a description of a demo that has been a part of a project run in Orange and documented in a separate project Report. Interested reader/user is referred to the Report for more details regarding the assumptions and models underlying the demo presented here.***
 
-***Note 2: as of this writing (Dec. 19th, 2023) all sources needed to run the demo are available in the branch secondloop2.***
+***Note 2: as of this update (Feb. 11th, 2024) all sources needed to run the demo are available in the branch master.***
 
 In the project mentioned in _Note 1_ above, a proposition of using Kubernetes operators to create complex closed loops is presented. Two different cases of closed loop are presented in the form of a running demo:
 
