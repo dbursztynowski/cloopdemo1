@@ -1,0 +1,195 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.11.1
+  creationTimestamp: null
+  name: closedloops.closedlooppooc.closedloop.io
+spec:
+  group: closedlooppooc.closedloop.io
+  names:
+    kind: ClosedLoop
+    listKind: ClosedLoopList
+    plural: closedloops
+    singular: closedloop
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: ClosedLoop is the Schema for the closedloops API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ClosedLoopSpec defines the desired state of ClosedLoop
+            properties:
+              decision:
+                properties:
+                  affix:
+                    type: string
+                  decisionkind:
+                    properties:
+                      decisionkindname:
+                        type: string
+                    required:
+                    - decisionkindname
+                    type: object
+                  decisionpolicies:
+                    properties:
+                      decisiontype:
+                        type: string
+                      priorityspec:
+                        properties:
+                          priorityrank:
+                            additionalProperties:
+                              type: string
+                            type: object
+                          prioritytype:
+                            type: string
+                          time:
+                            type: string
+                        type: object
+                    required:
+                    - decisiontype
+                    type: object
+                required:
+                - decisionkind
+                - decisionpolicies
+                type: object
+              execution:
+                description: Execution is the Schema for the executions API
+                properties:
+                  apiVersion:
+                    description: 'APIVersion defines the versioned schema of this
+                      representation of an object. Servers should convert recognized
+                      schemas to the latest internal value, and may reject unrecognized
+                      values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+                    type: string
+                  kind:
+                    description: 'Kind is a string value representing the REST resource
+                      this object represents. Servers may infer this from the endpoint
+                      the client submits requests to. Cannot be updated. In CamelCase.
+                      More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  metadata:
+                    type: object
+                  spec:
+                    description: ExecutionSpec defines the desired state of Execution
+                    properties:
+                      action:
+                        type: string
+                      affix:
+                        description: 'Important: Run "make" to regenerate code after
+                          modifying this file This is where you define what Spec you
+                          want for your CR Decision'
+                        type: string
+                      executiontypeid:
+                        format: int32
+                        type: integer
+                      time:
+                        type: string
+                    required:
+                    - action
+                    - executiontypeid
+                    type: object
+                  status:
+                    description: ExecutionStatus defines the observed state of Execution
+                    properties:
+                      affix:
+                        description: 'Important: Run "make" to regenerate code after
+                          modifying this file'
+                        type: string
+                    type: object
+                type: object
+              monitoring:
+                properties:
+                  affix:
+                    type: string
+                  monitoringkind:
+                    properties:
+                      monitoringkindname:
+                        type: string
+                      requestedpod:
+                        type: boolean
+                      source:
+                        properties:
+                          addresse:
+                            type: string
+                          interval:
+                            format: int32
+                            type: integer
+                          port:
+                            format: int32
+                            type: integer
+                        required:
+                        - addresse
+                        - interval
+                        - port
+                        type: object
+                    required:
+                    - monitoringkindname
+                    type: object
+                  monitorinpolicies:
+                    properties:
+                      data:
+                        additionalProperties:
+                          type: string
+                        type: object
+                      time:
+                        type: string
+                      tresholdkind:
+                        additionalProperties:
+                          type: string
+                        type: object
+                      tresholdvalue:
+                        additionalProperties:
+                          type: string
+                        type: object
+                    required:
+                    - data
+                    - tresholdkind
+                    - tresholdvalue
+                    type: object
+                required:
+                - monitoringkind
+                - monitorinpolicies
+                type: object
+              name:
+                description: This is where you define the Spec you want the ClosedLoop
+                  to have
+                type: string
+            required:
+            - decision
+            - execution
+            - monitoring
+            type: object
+          status:
+            description: ClosedLoopStatus defines the observed state of ClosedLoop
+            properties:
+              increaserank:
+                type: string
+              increasetime:
+                type: string
+              name:
+                description: In the ClosedLoop Controllers We don't use Status field
+                  but it's possible, here it's a example of how to define a status
+                  field
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

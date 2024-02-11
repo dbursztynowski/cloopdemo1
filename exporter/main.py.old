@@ -1,0 +1,49 @@
+import json
+import random
+import time
+import subprocess
+import os
+
+command = "/etc/init.d/nginx start"
+subprocess.run(command, shell=True)
+
+while True:
+    data = {
+        "cpu": random.randint(0, 10),
+        "memory": random.randint(0, 100),
+        "disk": random.randint(0, 1000)
+    }
+
+    # Ouvrir le fichier en mode append pour ajouter les nouvelles donnees        la fin
+    with open('/usr/share/nginx/html/index.html', 'a') as file:
+       
+        content = file.read()
+        
+        # Vérifier si le dernier caractère est "]" et le supprimer si c'est le cas
+        if content.endswith("]"):
+            content = content[:-1]  
+            # Revenir au début du fichier pour écrire le contenu modifié
+            file.seek(0)
+            file.truncate()
+            file.write(content)
+        # Verifier si le fichier est vide
+        if file.tell() == 0:
+            file.write('[')
+        else:
+            file.write(',')
+
+        # ecrire les donnees JSON dans le fichier
+        json.dump(data, file)
+
+
+        file.write(']')
+
+    print("Donnees ajoutees avec succes !")
+
+    # Attendre 10 secondes avant la prochaine iteration
+    time.sleep(5)
+
+
+
+
+

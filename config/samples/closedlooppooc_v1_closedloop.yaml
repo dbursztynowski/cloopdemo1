@@ -1,0 +1,52 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: ClosedLoop
+metadata:
+  labels:
+    app.kubernetes.io/name: closedloop
+    app.kubernetes.io/instance: closedloop-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: closedloop-v1
+  namespace : default
+spec:
+  monitoring :
+    monitoringkind :
+      monitoringkindname : Monitoring
+      source :
+        addresse : "10.109.142.74"
+        port : 3345
+        interval : 30
+    monitorinpolicies: 
+      data :
+        MonitoringData-1: "cpu"
+        MonitoringData-2: "memory"
+        MonitoringData-3: "disk"
+      tresholdkind :
+        MonitoringData-1-thresholdkind: "inferior"
+        MonitoringData-2-thresholdkind: "inferior"
+        MonitoringData-3-thresholdkind: "inferior"
+      tresholdvalue :
+        MonitoringData-1-thresholdvalue: "5"
+        MonitoringData-2-thresholdvalue: "50"
+        MonitoringData-3-thresholdvalue: "500"
+  decision :
+      decisionkind:
+        decisionkindname : Decision
+      decisionpolicies:
+        decisiontype: Priority
+        priorityspec:
+          prioritytype: Basic
+          priorityrank:
+            rank-1: cpu
+            rank-2: memory
+            rank-3: disk
+  execution :
+    apiVersion: closedlooppooc.closedloop.io/v1
+    kind: Execution
+    spec:
+      action : "No Action"
+      executiontypeid : 1
+    
+    
+  # TODO(user): Add fields here

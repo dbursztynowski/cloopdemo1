@@ -1,0 +1,14 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: Decision
+metadata:
+  labels:
+    app.kubernetes.io/name: decision
+    app.kubernetes.io/instance: decision-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: decision-sample
+spec:
+  # TODO(user): Add fields here
+  name : closedloop-decision-v1
+  message : "No Message"

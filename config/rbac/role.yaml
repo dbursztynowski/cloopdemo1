@@ -1,0 +1,399 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - services/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deploymentds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deploymentds/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - closedloopds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - closedloopds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - closedloopds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - closedloops
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - closedloops/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - closedloops/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisions/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisions/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionv2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionv2s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionv2s/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executionds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executionds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executionds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executions/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executions/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executionv2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executionv2s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - executionv2s/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringdv2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringdv2s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringdv2s/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitorings
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitorings/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitorings/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringv2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringv2s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringv2s/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingresses
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingresses/status
+  verbs:
+  - get
+  - list
+  - watch

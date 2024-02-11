@@ -1,0 +1,31 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: Monitoring
+metadata:
+  labels:
+    app.kubernetes.io/name: monitoring
+    app.kubernetes.io/instance: monitoring-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: monitoring-sample
+spec:
+  # TODO(user): Add fields here
+  affix : closedloop-monitoring-v1
+  source :
+    addresse : "10.109.142.74"
+    port : 3345
+    interval : 30
+  decisionkind : Decision
+  monitringpolicies: 
+    data :
+      MonitoringData-1: "cpu"
+      MonitoringData-2: "memory"
+      MonitoringData-3: "disk"
+    tresholdkind :
+      threshold-1: "basique"
+      threshold-2: "basique"
+      threshold-3: "basique"
+    tresholdvalue :
+      threshold-1: "5"
+      threshold-2: "50"
+      threshold-3: "500"

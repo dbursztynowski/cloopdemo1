@@ -1,0 +1,27 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: Monitoringv2
+metadata:
+  labels:
+    app.kubernetes.io/name: monitoringv2
+    app.kubernetes.io/instance: monitoringv2-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: monitoringv2-sample
+spec:
+  affix : closedloop-monitoring-v1
+  decisionkind : Decision
+  requestedpod : True
+  monitringpolicies: 
+    data :
+      MonitoringData-1: "cpu"
+      MonitoringData-2: "memory"
+      MonitoringData-3: "disk"
+    tresholdkind :
+      threshold-1: "basique"
+      threshold-2: "basique"
+      threshold-3: "basique"
+    tresholdvalue :
+      threshold-1: "5"
+      threshold-2: "50"
+      threshold-3: "500"

@@ -1,0 +1,12 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: ClosedLoopD
+metadata:
+  labels:
+    app.kubernetes.io/name: closedloopd
+    app.kubernetes.io/instance: closedloopd-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: closedloopd-sample
+spec:
+  # TODO(user): Add fields here

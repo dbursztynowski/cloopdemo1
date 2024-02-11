@@ -1,0 +1,12 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: ExecutionD
+metadata:
+  labels:
+    app.kubernetes.io/name: executiond
+    app.kubernetes.io/instance: executiond-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: executiond-sample
+spec:
+  # TODO(user): Add fields here

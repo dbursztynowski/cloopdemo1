@@ -1,0 +1,12 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: MonitoringD
+metadata:
+  labels:
+    app.kubernetes.io/name: monitoringd
+    app.kubernetes.io/instance: monitoringd-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: monitoringd-sample
+spec:
+  # TODO(user): Add fields here

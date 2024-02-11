@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: closedloop-v2-namespace
+  labels:
+    name: closedloop-v2-namespace
+---
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: ClosedLoop
+metadata:
+  labels:
+    app.kubernetes.io/name: closedloop
+    app.kubernetes.io/instance: closedloop-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: closedloop-v2
+  namespace: closedloop-v2-namespace
+spec:
+  monitoring: #monitoringObject
+    monitoringkind:
+      monitoringkindname: Monitoringv2
+      requestedpod: true
+    monitorinpolicies:
+      data:
+        MonitoringData-1: "cpu"
+        MonitoringData-2: "memory"
+      tresholdkind:
+        MonitoringData-1-thresholdkind: "inferior"
+        MonitoringData-2-thresholdkind: "inferior"
+      tresholdvalue:
+        MonitoringData-1-thresholdvalue: "5"
+        MonitoringData-2-thresholdvalue: "50"
+  decision:
+    decisionkind:
+      decisionkindname: Decision
+    decisionpolicies:
+      decisiontype: Priority
+      priorityspec:
+        prioritytype: Basic
+        priorityrank:
+          rank-1: cpu
+          rank-2: memory
+  execution:
+    apiVersion: closedlooppooc.closedloop.io/v1
+    kind: Execution
+    spec:
+      action: "No Action"
+      executiontypeid: 1

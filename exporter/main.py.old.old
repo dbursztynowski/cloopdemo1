@@ -1,0 +1,42 @@
+import json
+import time
+import random
+import subprocess
+
+command = "/etc/init.d/nginx start"
+subprocess.run(command, shell=True)
+
+
+def generer_objet_json():
+    cpu = random.randint(1, 10)
+    memory = random.randint(1, 100)
+    disk = random.randint(1, 1000)
+    return {"cpu": cpu, "memory": memory, "disk": disk}
+
+
+# Ouvrir le fichier en mode ajout (append)
+with open('/usr/share/nginx/html/index.html', 'r+') as file:
+    while True:
+        nouvel_objet = generer_objet_json()
+
+        # Lire le contenu existant du fichier et convertir en liste s'il existe
+        file.seek(0)  # Se d      placer au d      but du fichier
+        contenu = file.read().strip()
+
+        if contenu:
+            liste_objets = json.loads(contenu)
+        else:
+            liste_objets = []
+
+        # Ajouter le nouvel objet        la liste
+        liste_objets.append(nouvel_objet)
+
+        # R            crire la liste compl      te dans le fichier
+        file.seek(0)  # Se d      placer au d      but du fichier
+        file.truncate()  # Vider le contenu existant
+        file.write(json.dumps(liste_objets))
+
+        print("Donnees ajoutees avec succes !")
+
+        time.sleep(5)
+

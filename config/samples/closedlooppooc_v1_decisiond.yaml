@@ -1,0 +1,12 @@
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: DecisionD
+metadata:
+  labels:
+    app.kubernetes.io/name: decisiond
+    app.kubernetes.io/instance: decisiond-sample
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloop
+  name: decisiond-sample
+spec:
+  # TODO(user): Add fields here

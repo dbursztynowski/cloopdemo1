@@ -1,0 +1,27 @@
+# permissions for end users to view monitoringds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: monitoringd-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: closedloop
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+  name: monitoringd-viewer-role
+rules:
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringds
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - monitoringds/status
+  verbs:
+  - get

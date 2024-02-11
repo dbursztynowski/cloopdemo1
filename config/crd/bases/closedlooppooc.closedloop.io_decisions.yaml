@@ -1,0 +1,82 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.11.1
+  creationTimestamp: null
+  name: decisions.closedlooppooc.closedloop.io
+spec:
+  group: closedlooppooc.closedloop.io
+  names:
+    kind: Decision
+    listKind: DecisionList
+    plural: decisions
+    singular: decision
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: Decision is the Schema for the decisions API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DecisionSpec defines the desired state of Decision
+            properties:
+              affix:
+                description: This is where you define what Spec you want for your
+                  CR Decision
+                type: string
+              decisionpolicies:
+                properties:
+                  decisiontype:
+                    type: string
+                  priorityspec:
+                    properties:
+                      priorityrank:
+                        additionalProperties:
+                          type: string
+                        type: object
+                      prioritytype:
+                        type: string
+                      time:
+                        type: string
+                    type: object
+                required:
+                - decisiontype
+                type: object
+              executionkind:
+                type: string
+              message:
+                type: string
+              time:
+                type: string
+            required:
+            - decisionpolicies
+            - executionkind
+            type: object
+          status:
+            description: DecisionStatus defines the observed state of Decision
+            properties:
+              affix:
+                description: 'Important: Run "make" to regenerate code after modifying
+                  this file'
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

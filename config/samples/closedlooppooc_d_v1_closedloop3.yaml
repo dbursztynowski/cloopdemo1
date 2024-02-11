@@ -1,0 +1,33 @@
+
+apiVersion: closedlooppooc.closedloop.io/v1
+kind: ClosedLoopD
+metadata:
+  labels:
+    app.kubernetes.io/name: closedloopd
+    app.kubernetes.io/instance: closedloopd-sample
+    app.kubernetes.io/part-of: closedloopd
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: closedloopd
+  name: closedloopd-v2
+spec:
+  monitoring: #monitoringObject
+    monitoringkind:
+      monitoringkindname: MonitoringDv2
+      requestedpod: true
+  decision:
+    decisionkind:
+      decisionkindname: DecisionD
+    decisionpolicies:
+      decisiontype: Priority
+      priorityspec:
+        prioritytype: Basic
+        priorityrank:
+          rank-1: cpu
+          rank-2: memory
+  execution:
+    apiVersion: closedlooppooc.closedloop.io/v1
+    kind: ExecutionD
+    spec:
+      action: "No Action"
+      metric: "No Metric"
+      executiontypeid: 1

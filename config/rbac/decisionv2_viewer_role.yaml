@@ -1,0 +1,27 @@
+# permissions for end users to view decisionv2s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: decisionv2-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: closedloop
+    app.kubernetes.io/part-of: closedloop
+    app.kubernetes.io/managed-by: kustomize
+  name: decisionv2-viewer-role
+rules:
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionv2s
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - closedlooppooc.closedloop.io
+  resources:
+  - decisionv2s/status
+  verbs:
+  - get
