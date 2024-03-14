@@ -87,8 +87,6 @@ Also you need a RESTPod-Listen as proxy from managed system to closedloop, and o
 
 If you want to create you own closedloop project go to [Kubebuilder ClosedLoop on Minikube](#kubebuilder-closedloop-on-minikube)
 
-#stop AD
-
 ### Running on the cluster
 1. Install Instances of Custom Resources:
 
@@ -393,7 +391,7 @@ Below, we create a CRB (Cluster Role Binding) to allow ProxyPod accessing (i.e.,
 ```sh
 kubectl apply -f config/samples/closedlooppooc_v1_closedloop3.yaml
 ```
-#AD
+
 ##### run for the deliberative (second) loop
 
 ```sh
