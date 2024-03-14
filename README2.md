@@ -5,7 +5,7 @@
 
 # Table of contents
 
-1. [CHAPTER I. INTRODUCTION]([https://gitlab.com/adenisiewicz/closedloop/-/blob/secondloop2/README2.md#chapter-i-introduction](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-i-introduction))
+1. [CHAPTER I. INTRODUCTION](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-i-introduction)
 2. [CHAPTER II. GETTING STARTED](https://gitlab.com/adenisiewicz/closedloop/-/blob/secondloop2/README2.md#chapter-ii-getting-started)
 3. [CHAPTER III. KUBEBUILDER CLOSEDLOOP FROM SCRATCH \(and a little about running on minikube\)](https://gitlab.com/adenisiewicz/closedloop/-/blob/secondloop2/README2.md#chapter-iii-kubebuilder-closedloop-from-scratch-and-a-little-about-running-on-minikube)
 4. [CHAPTER IV. CONSOLIDTED ACTION SET](https://gitlab.com/adenisiewicz/closedloop/-/blob/secondloop2/README2.md#chapter-iv-consolidted-action-set)
