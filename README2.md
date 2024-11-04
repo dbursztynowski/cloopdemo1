@@ -1,6 +1,6 @@
 ### Authors: 
-**Dariusz Bursztynowski, Orange Innov PL**
-**Andrzej Denisiewicz, Orange Innov PL**
+**Dariusz Bursztynowski, Orange Innov PL,**
+**Andrzej Denisiewicz, Orange Innov PL,**
 **Thomas Bagnariol, Orange Innov/Net FR**
 
 ### Dec. 28th, 2023
