@@ -1,4 +1,7 @@
 # closedloop
+
+### Note: refer to README2.md for full documentation.
+
 // TODO(user): Add simple overview of use/purpose
 
 ## Description
