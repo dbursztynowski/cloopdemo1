@@ -1,7 +1,10 @@
 ### Authors: 
 **Dariusz Bursztynowski, Orange Innovation PL**
+
 **Andrzej Denisiewicz, Orange Innovation PL**
+
 **Thomas Bagnariol, Orange Innov/Net FR**
+
 ### Dec. 28th, 2023
 
 # DISTRIBUTED CONTROL LOOP BASED ON K8S OPERATORS - DEMO GUIDE
