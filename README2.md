@@ -697,7 +697,7 @@ Fig. 2. Step 7 - CR _DecisionD_ with lists _Spec.Data.cpu_ and _Spec.Data.Memory
 Fig. 3. Step 8 - CR _ExecutionD_ with _Spec.Action: Increase rank_ and _Spec.Metric: memory_
 <img src="./images/executiond_5.png" width="50%"></img>
 
-## Level: Reactive closed loop modification on the request from the deliberative loop
+## Level: Reactive closed loop modification on request from the deliberative loop
 
 #### STEPS 9, 10 ####
 
