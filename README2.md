@@ -11,7 +11,7 @@
 
 1. [CHAPTER I. INTRODUCTION](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-i-introduction)
 2. [CHAPTER II. GETTING STARTED](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-ii-getting-started)
-3. [CHAPTER III. KUBEBUILDER CLOSEDLOOP FROM SCRATCH \(and a little about running on minikube\)](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-iii-kubebuilder-closedloop-from-scratch-and-a-little-about-running-on-minikube)
+3. [CHAPTER III. KUBEBUILDER CLOSEDLOOP FROM SCRATCH \(and a bit about running it on minikube\)](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-iii-kubebuilder-closedloop-from-scratch-and-a-bit-about-running-it-on-minikube)
 4. [CHAPTER IV. CONSOLIDTED ACTION SET](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#chapter-iv-consolidted-action-set)
    1. [Uninstall/undeploy](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#uninstallundeploy)
    2. [All steps needed to run the demo](https://github.com/dbursztynowski/cloopdemo1/blob/master/README2.md#all-steps-needed-to-run-the-demo)
@@ -173,7 +173,7 @@ More information can be found via the [Kubebuilder Documentation](https://book.k
 
 **************************************************
 
-# CHAPTER III. KUBEBUILDER CLOSEDLOOP FROM SCRATCH (and a little about running on minikube)
+# CHAPTER III. KUBEBUILDER CLOSEDLOOP FROM SCRATCH (and a bit about running it on minikube)
 
 This Part explains how to reproduce the project starting from scratch and mainly for testing purposes, i.e., initialisation of the project with kubebuilder ini, writing all code on your own, and running the code locally in kubebuilder (i.e., not in kubernetes cluster). Running the loop in real cluster is described in a separate section later on in this document.
 
