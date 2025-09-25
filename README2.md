@@ -175,7 +175,7 @@ More information can be found via the [Kubebuilder Documentation](https://book.k
 
 # CHAPTER III. KUBEBUILDER CLOSEDLOOP FROM SCRATCH (and a bit about running it on minikube)
 
-This Part explains how to reproduce the project starting from scratch and mainly for testing purposes, i.e., initialisation of the project with kubebuilder ini, writing all code on your own, and running the code locally in kubebuilder (i.e., not in kubernetes cluster). Running the loop in real cluster is described in a separate section later on in this document.
+This part explains how to reproduce the project starting from scratch. It is intended mainly for testing purposes, i.e., initialisation of the project with kubebuilder ini, writing all code on your own, and running the code locally in kubebuilder (i.e., not in kubernetes cluster). Running the loop in a real cluster is described in a separate section later in this document.
 
 **1. Init your Project**
 
