@@ -739,7 +739,7 @@ Fig. 5. After step 4 - CR _MonitoringD_
 
 <img src="./images/monitoringd_7.png" width="50%"></img>
 
-Fig. 6. After step 7 - CR _DecisionD_ (notice Memory list has been added new element with recent memory caling time epoch)
+Fig. 6. After step 7 - CR _DecisionD_ (notice Memory list has been updated with a new element containing recent memory calling time epoch)
 
 <img src="./images/decisiond_7.png" width="50%"></img>
 
